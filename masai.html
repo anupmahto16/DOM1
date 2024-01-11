@@ -4,19 +4,25 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>This example demonstrates how we can change text content when clicking on button</h1>
+  <h1>Masai School Application</h1>
+  <p>Enter Your name and gender to apply for Masai School</p>
+  <h2 id="display">Display entered name and gender here</h2>
   <hr>
-  <h1 id="display">Click on Login to continue</h1>
-  <button onClick="login()">Login</button>
-  <button onClick="logout()">Logout</button>
+  <input type="text" id="name" placeholder="Enter your name">
+  <select id="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+  <button onclick="apply()">Apply</button>
 
   <script>
-    function login() {
-      document.getElementById("display").textContent = "Login Success";
-    }
+    function apply() {
+      // Get values from input and select elements
+      var enteredName = document.getElementById("name").value;
+      var selectedGender = document.getElementById("gender").value;
 
-    function logout() {
-      document.getElementById("display").textContent = "Logout Success";
+      // Display the entered values in the h2 element
+      document.getElementById("display").textContent = "Name: " + enteredName + ", Gender: " + selectedGender;
     }
   </script>
 </body>
